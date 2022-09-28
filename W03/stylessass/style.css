@@ -1,0 +1,24 @@
+/* everything in the header can be listed in one place under header */
+header {
+    background: lightblue;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #871010;
+  }
+  
+  header button {
+    background: #d0b9bc;
+  }
+  
+  header button:hover {
+    background: rgba(255, 0, 0, 0.355);
+  }
+  
+  .contact button {
+    background: #d0b9bc;
+  }
+  /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,13 @@
+/* everything in the header can be listed in one place under header */
+header {
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    color: $textColor;
+    button {
+      background: $primaryBtn;
+      &:hover {
+        background: rgba(255, 0, 0, 0.355);
+      }
+    }
+  }

@@ -1,0 +1,88 @@
+/* variables will follow */
+//colors
+$body-background-color: darkred;
+$form-background-color: tan;
+$input-color: beige;
+$headlines-color : rgba(255, 255, 255, 0.822);
+//media queries
+$break-small: 480px;
+$break-large: 701px;
+
+body {
+  background-color: $body-background-color; 
+          
+}
+
+h1 {
+  color: $headlines-color;
+}
+
+/* #contactform {
+  background-color: $form-background-color;
+}
+#contactform input, #contactform textarea {
+  background-color: $input-color;
+}
+*/
+// the above can be nested like this:
+#contactform {
+  background-color: $form-background-color;
+  input, textarea {
+      background-color: $input-color;
+      flex: 2;
+  }
+ 
+/* Nesting can be done with either selectors or contexts like @media or @supports. For example that we want to have our form fill 100% of the width of the screen at small sizes, but only take up 90% on medium with a max-width of 700px. Perfect job for a media query. Lets look and see what that would look like with nesting. */ 
+@media (min-width: $break-small) {
+  & {
+     width: 90%;
+     max-width: 700px;
+     margin-left: auto;
+     margin-right: auto; 
+   }
+   @media (min-width: $break-large) {
+    & {
+       width: 70%;
+       max-width: 900px;
+       margin-left: auto;
+       margin-right: auto; 
+     }
+    }  
+  }
+}
+
+//Lets create  a mixin for flex to save us some typing.
+/* @mixin flex-container() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+//Now whenever we need to create flex-container we can simply do something like this:
+fieldset > div {
+  @include flex-container;        
+}
+*/
+
+//what if we need a column layout instead of row? thee above mixin would not work for that.. We need to modify it to take a parameter or two. Parameters can let us decide things such as whether we want row or column, wrap or nowrap when we use the mixin. Modified it would look like this:
+@mixin flex-container($axis, $wrap: nowrap) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: $axis $wrap;
+  -ms-flex-flow: $axis $wrap;
+  flex-flow: $axis $wrap;
+}
+//This mixin now accepts 1 or 2 parameters. Notice that we have provided a value on the second: nowrap. If we do not send 2 parameters then it will default to nowrap for the second. 
+fieldset > div {
+  @include flex-container(column);        
+} 
+
+//The parameter gets entered in ( ) after the mixin name. If we wanted row wrap as our options instead we would do this:
+/* fieldset > div {
+  @include flex-container(row, wrap);        
+} */
