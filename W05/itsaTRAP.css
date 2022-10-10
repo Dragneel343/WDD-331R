@@ -113,8 +113,6 @@ will start changing one or the other before you are ready) */
 
 
 /* Cut into Half */
-
-
 .half-circle-left{
     margin: 10px;
     border-bottom-left-radius: 100px;
@@ -165,7 +163,6 @@ timing function and iteration-count*/
 
 
 /* Popping Circle */
-
 .popping-circle {
     height: 25%;
     width: 25%;
@@ -181,7 +178,6 @@ timing function and iteration-count*/
 
 
 /* Popping Circle Keyframes*/
-
 @keyframes popping-circle {
     0% {transform: scale(1.0);}
     2% {transform: scale(1.3);}
