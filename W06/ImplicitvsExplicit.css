@@ -1,0 +1,24 @@
+body {
+    margin: 10px;
+  }
+  .container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /*grid-template-area: auto auto auto;
+      grid-template-area: auto auto auto;
+      grid-auto-rows: 100px; 
+      this will add to the implicit rows made
+      grid-auto-columns: 100px; */
+    background-color: pink;
+  }
+  .item {
+    font-size: 50px;
+    font-family: sans- serif;
+    color: blue;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+  }
