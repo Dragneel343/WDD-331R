@@ -1,0 +1,79 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: clamp(
+    var(--fluid-type-min, 1rem),
+    calc(1rem + var(--fluid-type-target, 3vw)),
+    var(--fluid-type-max, 1.3rem)
+  );
+}
+
+:root {
+  --max-width: 700px;
+  --min-width: 300px;
+  --preferred-width: 80%;
+  --quoteColor: #5f4884;
+  color: #fce6b5;
+}
+
+.quote-box {
+  background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/55958255-58ff-4f4a-873c-f56f9b2530e1/depkmtb-3a8ab19c-0d7d-47d9-8862-038fe7e18c0b.png/v1/fill/w_1280,h_537,strp/lotr_gandalf_by_lavilsa_depkmtb-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTM3IiwicGF0aCI6IlwvZlwvNTU5NTgyNTUtNThmZi00ZjRhLTg3M2MtZjU2ZjliMjUzMGUxXC9kZXBrbXRiLTNhOGFiMTljLTBkN2QtNDdkOS04ODYyLTAzOGZlN2UxOGMwYi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.N19jHQDJjoknUWnXaT05wXzD3DmbkP4piBhPsIrpfaM");
+  background-size: 100% 100%;
+  border-radius: 25px;
+  border: 4px solid var(--quoteColor);
+  width: clamp(var(--min-width), var(--preferred-width), var(--max-width));
+  margin: 0 auto;
+  display: flex;
+  padding: 3em;
+  gap: 2em;
+  &__quote {
+    position: relative;
+    --fluid-type-min: 1.2rem;
+    --fluid-type-target: 2.5vw;
+    --fluid-type-max: 2.4rem;
+    p {
+      filter: brightness(var(--brightness, 100%));
+    }
+
+    &::before {
+      --quoteSize: 65px;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.458 20.544'%3E%3Cpath fill='%23333' d='M11.37 20.544v-9.792c-.043-1.408.16-2.73.607-3.968a10.31 10.31 0 0 1 1.889-3.265 10.414 10.414 0 0 1 2.912-2.336 10.382 10.382 0 0 1 3.68-1.184v4.224c-1.622.556-2.731 1.376-3.328 2.464-.598 1.089-.896 2.423-.896 4h4.224v9.856H11.37zm-11.364 0v-9.792c-.043-1.408.16-2.73.608-3.968A10.311 10.311 0 0 1 2.502 3.52a10.414 10.414 0 0 1 2.912-2.336A10.369 10.369 0 0 1 9.094 0v4.224C7.472 4.779 6.363 5.6 5.766 6.688c-.598 1.089-.896 2.423-.896 4h4.224v9.856H.006z'/%3E%3C/svg%3E");
+      content: "";
+      filter: brightness(var(--brightness, 100%));
+      height: var(--quoteSize);
+      width: var(--quoteSize);
+      position: absolute;
+      left: -90px;
+      top: 0;
+    }
+    &-author {
+      text-align: right;
+    }
+  }
+  &__author-image {
+    @media (max-width: 680px) {
+      align-self: flex-end;
+    }
+    & img {
+      margin-top: -4em;
+
+      border: 4px solid var(--quoteColor);
+      box-shadow: 10px 10px 0 var(--quoteColor);
+      @media (max-width: 680px) {
+        border-radius: 100%;
+        box-shadow: initial;
+        width: 80px;
+      }
+    }
+  }
+}
+
+.dark-section {
+  --brightness: 500%;
+  background-color: #233;
+  color: white;
+}
