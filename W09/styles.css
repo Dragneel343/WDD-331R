@@ -1,0 +1,38 @@
+.row-grid {
+    display: flex;
+    flex-flow: row wrap; 
+}  
+.row-grid div {
+    height: 100px;
+    flex: 1 auto;
+    align-content: stretch;
+    margin: 1%;
+    border: 1pt solid black;
+    overflow: hidden;
+    border-radius: 10px;
+} 
+.col-grid {
+    display: flex;
+    flex-flow: row wrap; 
+}
+.col-grid div {
+    width: 100px;
+    flex: 1 auto;
+    align-content: stretch;
+    margin: 1%;
+    border: 1pt solid black;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .card {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    object-fit: cover;
+  }
+  .card h2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+  }
