@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="side-menu.css">
+    <script src="side-menu.js"></script>
+    <title>Animated Sliding Menu</title>
+</head>
+<body>
+    <div class="wrapper">
+        <aside class="closed" id="sidebar" onclick="toggleNav()">
+          <ul>
+            <li><a href="#">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+            <li><a href="#">Four</a></li>
+          </ul>
+        </aside>
+        
+        <main>
+          <div class="menu-icon" id="menu-icon" onclick="toggleNav()">
+            <span></span>
+          </div>
+          <h1>Animated Slideout Menu</h1>
+          <p>All the stuff.</p>
+        </main>
+      </div>
+</body>
+</html>
